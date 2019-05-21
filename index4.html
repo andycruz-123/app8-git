@@ -7,12 +7,12 @@
 <body>
 <!--Se determina la localizacion-->
 <div id='ubicacion'></div>
-<script type="tex/javascrip">
+<script type="text/javascript">
 if(navigator.geolocation){
    navigator.geolocation.getCurrentPosition (mostrarUbicacion);
 }else{alert("¡Error!Este navegador no soporta la Geolocalizacion.");}
   function refrescarUbicacion(){
-	  navigator.geolocation.watchPosition(mostaraUbicacion);}
+	  navigator.geolocation.watchPosition(mostrarUbicacion);}
 	  </script>
       
 <!--Se escribe un mapa con la alocalizacion anteriror-->
@@ -21,21 +21,21 @@ if(navigator.geolocation){
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFd0aiE5FttY8XRAFI9ecTSpgo2vP-qMk"></script>
 
 <button onClick="cargarmap()">Cargar mapa</button>
-<script type"text/javascrip">
+<script type"text/javascript">
   var x=document.getElementById("demo");
   function cargarmap(){
-	  navigator.geolocation.getCurrentPosition(showPosition,ShowError);
+	  navigator.geolocation.getCurrentPosition  (showPosition,ShowError);
 	  function showPosition(position)
 	  {
 		  lat=position.coords.latitude;
 		  lon=position.coords.logitude;
-		  lation=new google.maps.LatLng(lat,lon)
+		  latlon=new google.maps.LatLng(lat,lon)
 		  mapholder=document.getElementById('mapholder')
 		  mapholder.style.height ='500px';
-		  mapholder.style.whidth ='750px';
+		  mapholder.style.width ='750px';
 		  var myOptions={
 			  center:latlon,zom :15,
-			  mapTypeld:google.MapTypeld.ROAMAP,
+			  mapTypeld:google.maps.MapTypeld.ROADMAP,
 			  mapTypeControl :false,
 			  navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
 		  };
@@ -60,10 +60,9 @@ if(navigator.geolocation){
 			  break;
 		  }
 	  }}
-	  </script>
-      
-      </body>
-      </html>
+ </script>
+ </body>
+ </html>
 		  
 			  
 			  
