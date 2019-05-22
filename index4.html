@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!doctype html> 
 <html>
 <head>
 <meta charset="utf-8">
@@ -13,9 +13,9 @@ if(navigator.geolocation){
 }else{alert("¡Error!Este navegador no soporta la Geolocalizacion.");}
   function refrescarUbicacion(){
 	  navigator.geolocation.watchPosition(mostrarUbicacion);}
-	  </script>
+</script>
       
-<!--Se escribe un mapa con la alocalizacion anteriror-->
+<!--Se escribe un mapa con la localizacion anterior-->
 <div id="demo"></div>
 <div id="mapholder"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFd0aiE5FttY8XRAFI9ecTSpgo2vP-qMk"></script>
@@ -24,7 +24,7 @@ if(navigator.geolocation){
 <script type"text/javascript">
   var x=document.getElementById("demo");
   function cargarmap(){
-	  navigator.geolocation.getCurrentPosition(showPosition,ahowError);
+	  navigator.geolocation.getCurrentPosition  (showPosition,showError);
 	  function showPosition(position)
 	  {
 		  lat=position.coords.latitude;
@@ -47,7 +47,7 @@ if(navigator.geolocation){
 		  switch(error.code)
 		  {
 			  case error.PERMISSION_DENIED:
-			  x.innerHTML="Denegada la petiocion de Geolocalizacion en el navegador."
+			  x.innerHTML="Denegada la peticion de Geolocalizacion en el navegador."
 			  break;
 			  case error.POSITION_UNAVAILABLE:
 			  x.innerHTML="La informacion de la localizacion no esta disponible."
